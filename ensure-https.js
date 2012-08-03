@@ -1,6 +1,7 @@
 var http = require('http');
 
-function handle(options, req, res) {
+function handle(req, res) {
+  var options = this;
   var hostname = (options.forceHost || req.headers.host || options.host || 'localhost').split(':').shift();
   var location = 'https://'+[ hostname, (options.sslPort || 443) ].join(':') + req.url;
   var headers = {
@@ -9,12 +10,12 @@ function handle(options, req, res) {
     'Server': options.serverName || 'ensure-https',
     'Date': (new Date()).toGMTString()
   };
-  if (request.method !== 'HEAD') {
+  if (req.method !== 'HEAD') {
     headers['Content-Type'] = 'text/plain';
   }
   res.writeHead(options.statusCode || 301, 'Moved Permanently', headers);
-  if (request.method !== 'HEAD') {
-    return res.write('Moved Permanently to '+location);
+  if (req.method !== 'HEAD') {
+    res.write('Moved Permanently to '+location);
   }
   res.end();
 }
