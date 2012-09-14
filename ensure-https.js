@@ -1,3 +1,7 @@
+/*
+** © 2012 by YOUSURE Tarifvegleich GmbH. Licensed under MIT License.
+*/
+
 var http = require('http');
 
 function handle(req, res) {
