@@ -6,6 +6,9 @@
   "bugs": {
     "url": "https://github.com/phidelta/ensure-https/issues"
   },
+  "bin": {
+    "ensure-https": "./bin/ensure-https.js"
+  },
   "author": {
     "name": "Philipp Dunkel",
     "email": "p.dunkel@durchblicker.at"

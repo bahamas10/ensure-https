@@ -16,6 +16,28 @@ This is a little utility package that creates an HTTP-Server that directly redir
     var server=ensure.createServer(options);
     server.listen(80);
 
+## Command Line
+
+Install the command line server with
+
+    [sudo] npm install -g ensure-https
+
+Then fire it up:
+
+    $ [sudo] ensure-https
+    server started: http://0.0.0.0:8080
+    127.0.0.1 - - [15/Nov/2013:11:53:00 -0500] "GET / HTTP/1.1" 301 - "-" "curl/7.30.0"
+
+You can set various server options by setting environmental variables
+
+- `ENSURE_HTTPS_FORCE_HOST`: same as `options.forceHost`
+- `ENSURE_HTTPS_HOST`: same as `options.host`
+- `ENSURE_HTTPS_SERVER_NAME`: same as `options.serverName`
+- `ENSURE_HTTPS_SSL_PORT`: same as `options.sslPort`
+- `ENSURE_HTTPS_STATUS_CODE`: same as `options.statusCode`
+- `ENSURE_HTTPS_SERVER_PORT`: port on which to listen, defaults to `80`
+- `ENSURE_HTTPS_SERVER_HOST`: host on which to listen, defaults to `0.0.0.0`
+
 ## License
 
 MIT License
