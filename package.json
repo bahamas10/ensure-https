@@ -1,9 +1,20 @@
 {
-  "name":"ensure-https",
-  "version":"0.2.0",
-  "description":"A mini HTTP-Server that redirects to HTTPS",
-  "main":"ensure-https.js",
-  "bugs":{ "url":"https://github.com/phidelta/ensure-https/issues" },
-  "author":{ "name":"Philipp Dunkel", "email":"p.dunkel@durchblicker.at" },
-  "repository":{ "type":"git", "url":"https://github.com/phidelta/ensure-https.git" }
+  "name": "ensure-https",
+  "version": "0.2.0",
+  "description": "A mini HTTP-Server that redirects to HTTPS",
+  "main": "ensure-https.js",
+  "bugs": {
+    "url": "https://github.com/phidelta/ensure-https/issues"
+  },
+  "author": {
+    "name": "Philipp Dunkel",
+    "email": "p.dunkel@durchblicker.at"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phidelta/ensure-https.git"
+  },
+  "dependencies": {
+    "access-log": "~0.3.3"
+  }
 }

@@ -4,8 +4,13 @@
 
 var http = require('http');
 
+var accesslog = require('access-log');
+
 function handle(req, res) {
   var options = this;
+  if (optsions.accessLogs) {
+    accesslog(req, res);
+  }
   var hostname = (options.forceHost || req.headers.host || options.host || 'localhost').split(':').shift();
   var location = 'https://'+[ hostname, (options.sslPort || 443) ].join(':') + req.url;
   var headers = {
