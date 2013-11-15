@@ -6,11 +6,12 @@ This is a little utility package that creates an HTTP-Server that directly redir
 
     var ensure=require('ensure-https');
     var options={
-      'forceHost':undefined,   // If this is set then the destination URL is forced to this hostname
-      'host':'localhost',      // This is the default host to use (for HTTP/0.9 clients) (default: localhost)
-      'sslPort':443,           // This is the port of your HTTPS server if it is not 443 (default: 443)
-      'statusCode':301,        // This is the HTTP Status-Code to use                    (defualt: 301)
-      'accessLog':undefined    // If this is set then Apache style access logs are written to stdout
+      'accessLog':undefined       // If this is set then Apache style access logs are written to stdout
+      'forceHost':undefined,      // If this is set then the destination URL is forced to this hostname
+      'host':'localhost',         // This is the default host to use (for HTTP/0.9 clients) (default: localhost)
+      'serverName':'ensure-https' // This is the `server` response header sent to clients   (default: ensure-https)
+      'sslPort':443,              // This is the port of your HTTPS server if it is not 443 (default: 443)
+      'statusCode':301,           // This is the HTTP Status-Code to use                    (defualt: 301)
     };
     var server=ensure.createServer(options);
     server.listen(80);
