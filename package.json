@@ -15,6 +15,6 @@
     "url": "https://github.com/phidelta/ensure-https.git"
   },
   "dependencies": {
-    "access-log": "~0.3.3"
+    "access-log": "~0.3.4"
   }
 }
